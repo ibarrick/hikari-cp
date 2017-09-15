@@ -83,6 +83,7 @@
    (s/optional-key :connection-init-sql) s/Str
    (s/optional-key :metric-registry) s/Any
    (s/optional-key :health-check-registry) s/Any
+   (s/optional-key :driver-class-name) s/Str
    s/Keyword           s/Any})
 
 (def AdapterConfigurationOptions
@@ -91,8 +92,7 @@
 
 (def JDBCUrlConfigurationOptions
   (assoc BaseConfigurationOptions
-         :jdbc-url s/Str
-         (s/optional-key :driver-class-name) s/Str))
+         :jdbc-url s/Str))
 
 (def DatasourceConfigurationOptions
   (assoc BaseConfigurationOptions
